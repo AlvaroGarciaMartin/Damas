@@ -10,7 +10,7 @@ public class Posicion {
 
     public void setFila(int fila) {
         if (fila<1 | fila>8){
-            throw new IllegalArgumentException("la columna debe tener valores entre 1 y 8 incluidos");
+            throw new IllegalArgumentException("la fila debe tener valores entre 1 y 8 incluidos");
 
         }
         this.fila = fila;
@@ -20,8 +20,17 @@ public class Posicion {
         return columna;
     }
 
-    public void setColumna(char columna) {
 
+    public void setColumna(char columna) {
+        if (columna<'a' | columna>'h'){
+            throw new IllegalArgumentException("la columna debe tener valores entre a y h incluidos");
+
+        }
         this.columna = columna;
     }
+    public Posicion(){
+        setFila(fila);
+        setColumna(columna);
+    }
 }
+
