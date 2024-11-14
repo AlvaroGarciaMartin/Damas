@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.damas.modelo;
 
+import java.util.Objects;
+
 public class Posicion {
    private int fila;
    private char columna;
@@ -36,6 +38,18 @@ public class Posicion {
     public Posicion (Posicion objtPoscicion){
         this.fila= objtPoscicion.fila;
         this.columna= objtPoscicion.columna;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Posicion posicion)) return false;
+        return fila == posicion.fila && columna == posicion.columna;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fila, columna);
     }
 }
 
