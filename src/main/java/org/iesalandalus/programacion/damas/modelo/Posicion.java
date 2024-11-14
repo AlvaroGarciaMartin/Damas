@@ -32,5 +32,10 @@ public class Posicion {
         setFila(fila);
         setColumna(columna);
     }
+    //constructor copia de Posicion
+    public Posicion (Posicion objtPoscicion){
+        this.fila= objtPoscicion.fila;
+        this.columna= objtPoscicion.columna;
+    }
 }
 
