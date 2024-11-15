@@ -8,7 +8,7 @@ public enum Direccion {
     {
         this.cadenaAMostrar=cadenaAMostrar;
     }
-    //Crear cadenaAMostrar//
+    //Crear tostring cadenaAMostrar//
     @Override
     public String toString() {
         return ordinal()+".-"+cadenaAMostrar;
