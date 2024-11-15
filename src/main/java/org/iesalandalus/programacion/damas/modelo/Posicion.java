@@ -6,6 +6,17 @@ public class Posicion {
    private int fila;
    private char columna;
 
+    //constructor de posicion
+    public Posicion(int fila, char columna){
+        setFila(fila);
+        setColumna(columna);
+    }
+    //constructor copia de Posicion
+    public Posicion (Posicion objtPoscicion){
+        this.fila= objtPoscicion.fila;
+        this.columna= objtPoscicion.columna;
+    }
+
     public int getFila() {
         return fila;
     }
@@ -30,15 +41,7 @@ public class Posicion {
         }
         this.columna = columna;
     }
-    public Posicion(){
-        setFila(fila);
-        setColumna(columna);
-    }
-    //constructor copia de Posicion
-    public Posicion (Posicion objtPoscicion){
-        this.fila= objtPoscicion.fila;
-        this.columna= objtPoscicion.columna;
-    }
+
 
     @Override
     public boolean equals(Object o) {
