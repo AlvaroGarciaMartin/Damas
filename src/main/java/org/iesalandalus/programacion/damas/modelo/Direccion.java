@@ -4,9 +4,9 @@ public enum Direccion {
     //Crear las direcciones de la dama//
     NORESTE("Noreste"), SURESTE("Sureste"), SUROESTE("Suroeste"), NOROESTE("Noroeste");
     private String cadenaAMostrar;
-    private Direccion(String mensajeAMostrar)
+    private Direccion(String cadenaAMostrar)
     {
-        this.cadenaAMostrar=mensajeAMostrar;
+        this.cadenaAMostrar=cadenaAMostrar;
     }
     //Crear cadenaAMostrar//
     @Override
