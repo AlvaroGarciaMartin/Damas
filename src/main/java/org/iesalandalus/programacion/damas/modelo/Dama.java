@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.damas.modelo;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Dama {
     private Color color;
     private Posicion posicion;
@@ -44,15 +46,68 @@ public class Dama {
         return new Posicion(fila,letraColumna);
 
     }
-    public void mover ( Direccion direccion, int npasos){
+    public void mover ( Direccion direccion, int npasos) throws OperationNotSupportedException {
         if (direccion == null) {
             throw new NullPointerException(" La dirección no puede ser NULL");
+        }
+        if (npasos<1) {
+            throw new OperationNotSupportedException("Los pasos deben ser minimo 1");
+        }
+
+        if (!esDamaEspecial) {
+
+        if (color == Color.BLANCO) {
+            if(direccion==Direccion.SURESTE||direccion==Direccion.SUROESTE){
+                throw new OperationNotSupportedException("La dama normal no puede avanzar hacia atrás");
+            }else if (npasos!=1){
+                throw new OperationNotSupportedException("La dama normal solo puede avanzar una casilla");
+            }
+            switch (direccion){
+                case NORESTE -> this.setPosicion( new Posicion(getPosicion().getFila()+1, (char)(getPosicion().getColumna() -1)));
+                case NOROESTE -> this.setPosicion( new Posicion(getPosicion().getFila()+1, (char)(getPosicion().getColumna() +1)));
+            }
+            //Si la dama blanca llega al final del tablero se convierte en dama especial
+            if(this.posicion.getFila() ==8){
+                this.esDamaEspecial=true;
+
+            }
+
+        }
+        if (color == Color.NEGRO) {
+            if(direccion==Direccion.NORESTE||direccion==Direccion.NOROESTE){
+                throw new OperationNotSupportedException("La dama normal no puede avanzar hacia atrás");
+            }else if (npasos!=1){
+                throw new OperationNotSupportedException("La dama normal solo puede avanzar una casilla");
+            }
+            switch (direccion){
+                case SURESTE -> this.setPosicion( new Posicion(getPosicion().getFila()-1, (char)(getPosicion().getColumna() -1)));
+                case SUROESTE -> this.setPosicion( new Posicion(getPosicion().getFila()-1, (char)(getPosicion().getColumna() +1)));
+            }
+            //Si la dama negra llega al final del tablero se convierte en dama especial
+            if(this.posicion.getFila() ==1){
+                this.esDamaEspecial=true;
+
+            }
+
+        }
+
+        }else {
+            switch (direccion){
+                case NOROESTE -> this.setPosicion(new Posicion(getPosicion().getFila() + npasos, (char) (getPosicion().getColumna() - npasos)));
+                case NORESTE -> this.setPosicion(new Posicion(getPosicion().getFila() + npasos, (char) (getPosicion().getColumna() + npasos)));
+
+                case SURESTE -> this.setPosicion(new Posicion(getPosicion().getFila() - npasos, (char) (getPosicion().getColumna() + npasos)));
+                case SUROESTE -> this.setPosicion(new Posicion(getPosicion().getFila() - npasos, (char) (getPosicion().getColumna() - npasos)));
+            }
         }
 
 
     }
 
-
+    @Override
+    public String toString() {
+        return "El color de la dama es: " +color+ " se situa en la posición con la fila: "+ posicion.getFila() + " y la columna: "+ posicion.getColumna();
+    }
 
     public Color getColor() {
         return color;
