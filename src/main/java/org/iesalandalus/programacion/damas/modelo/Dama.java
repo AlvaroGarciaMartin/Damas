@@ -44,6 +44,13 @@ public class Dama {
         return new Posicion(fila,letraColumna);
 
     }
+    public void mover ( Direccion direccion, int npasos){
+        if (direccion == null) {
+            throw new NullPointerException(" La dirección no puede ser NULL");
+        }
+
+
+    }
 
 
 
