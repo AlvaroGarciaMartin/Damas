@@ -33,5 +33,12 @@ public class MainApp {
     Consola.despedirse();
   }
  }
+ //asigna al atributo de clase dama una nueva instancia de una dama creada con el constructor por defecto
+ public static void crearDamaPorDefecto(){
+  dama=new Dama();
+ }
+ //asigna al atributo de clase dama una nueva instancia de una dama creado con el constructor al que le pasamos el color
+ public static void crearDamaColor(){
 
+ }
 }
