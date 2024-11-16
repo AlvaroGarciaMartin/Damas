@@ -13,6 +13,13 @@ public class Dama {
        setColor(Color.BLANCO);
        this.esDamaEspecial=false;
     }
+
+    public Dama(Color color) {
+        setColor(color);
+        this.posicion=crearPosicionInicial();
+        this.esDamaEspecial=false;
+    }
+
     //crear metodo crearPosicionInicial random para colocar primera ficha
     private Posicion crearPosicionInicial(){
         int columna;

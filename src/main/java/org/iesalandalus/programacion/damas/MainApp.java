@@ -1,9 +1,10 @@
 package org.iesalandalus.programacion.damas;
 import  org.iesalandalus.programacion.damas.modelo.Direccion;
 import  org.iesalandalus.programacion.damas.modelo.Dama;
-import  org.iesalandalus.programacion.damas.modelo.Color;
 import  org.iesalandalus.programacion.damas.modelo.Posicion;
 import org.iesalandalus.programacion.utilidades.Entrada;
+
+import java.awt.*;
 
 public class MainApp {
  private static Dama dama;
@@ -39,6 +40,6 @@ public class MainApp {
  }
  //asigna al atributo de clase dama una nueva instancia de una dama creado con el constructor al que le pasamos el color
  public static void crearDamaColor(){
-
+ dama= new Dama(Consola.elegirOpcion());
  }
 }
