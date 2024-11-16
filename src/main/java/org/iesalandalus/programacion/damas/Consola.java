@@ -41,5 +41,29 @@ public class Consola {
 
         }else return Color.NEGRO;
     }
+    public static void mostrarMenuDirecciones(){
+
+        System.out.println(" Elija una de las siguientes opciones de dirección");
+        System.out.println(" 1. Noreste");
+        System.out.println(" 2. Noroeste");
+        System.out.println(" 3. Sureste");
+        System.out.println(" 4. Suroeste");
+    }
+
+    public static Direccion elegirDirecion(){
+        int direcion;
+        do {
+            System.out.println("Escribe un numero del 1 al 4");
+            direcion=Entrada.entero();
+        }while (direcion<1 || direcion>4);
+
+        switch (direcion){
+            case 1: return Direccion.NORESTE;
+            case 2: return Direccion.NOROESTE;
+            case 3: return Direccion.SURESTE;
+            case 4: return Direccion.SUROESTE;
+        }
+        return null;
+    }
 
 }
