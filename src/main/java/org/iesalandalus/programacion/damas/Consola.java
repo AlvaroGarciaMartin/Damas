@@ -22,9 +22,9 @@ public class Consola {
     public static int elegirOpcionMenu() {
         int opcion;
         do {
-            System.out.println("Indica El numero del menú que deseas usar");
+            System.out.println("Indica El numero del menu que deseas usar");
             opcion= Entrada.entero();
-        }while (opcion<1 || opcion>4);
+        }while (opcion<=0 || opcion>4);
 
         return opcion;
     }

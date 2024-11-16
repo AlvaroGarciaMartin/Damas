@@ -15,6 +15,7 @@ public class MainApp {
  public static void main(String[] args) {
   int opcionElegida;
   do{
+  mostrarDama();
    Consola.mostrarMenu();
    opcionElegida=Consola.elegirOpcionMenu();
       try {
@@ -64,11 +65,7 @@ public class MainApp {
   }
   //Mostrar dama
   private static void mostrarDama(){
-   if (dama.getPosicion() != null) {
-    System.out.println("La Dama es de color:"+ dama.getColor()+"y se situa en la posición"+ dama.getPosicion());
-   } else{
-    System.out.println("La dama no está creada");
-   }
+   System.out.println(dama);
 
   }
 
