@@ -56,7 +56,7 @@ public class MainApp {
 
   }
   //Mostrar dama
-  public static void mostrarDama(){
+  private static void mostrarDama(){
    if (dama.getPosicion() != null) {
     System.out.println("La Dama es de color:"+ dama.getColor()+"y se situa en la posición"+ dama.getPosicion());
    } else{
