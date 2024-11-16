@@ -55,5 +55,14 @@ public class MainApp {
    }else dama.mover(Consola.elegirDirecion(),1);
 
   }
+  //Mostrar dama
+  public static void mostrarDama(){
+   if (dama.getPosicion() != null) {
+    System.out.println("La Dama es de color:"+ dama.getColor()+"y se situa en la posición"+ dama.getPosicion());
+   } else{
+    System.out.println("La dama no está creada");
+   }
+
+  }
 
 }
