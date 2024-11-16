@@ -73,7 +73,7 @@ public class Dama {
             }
 
         }
-        if (color == Color.NEGRO) {
+        else if (color == Color.NEGRO) {
             if(direccion==Direccion.NORESTE||direccion==Direccion.NOROESTE){
                 throw new OperationNotSupportedException("La dama normal no puede avanzar hacia atrás");
             }else if (npasos!=1){
