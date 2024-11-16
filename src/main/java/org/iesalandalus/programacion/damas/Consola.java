@@ -66,4 +66,13 @@ public class Consola {
         return null;
     }
 
+    public static void elegirPasos(){
+        int casillas;
+        do {
+            System.out.println("Inserte el numero de casillas a mover:");
+            casillas=Entrada.entero();
+        }while(casillas<1 || casillas>8);
+
+    }
+
 }
