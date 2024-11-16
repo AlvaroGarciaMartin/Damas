@@ -65,7 +65,7 @@ public class Dama {
 
         if (color == Color.BLANCO) {
             if(direccion==Direccion.SURESTE||direccion==Direccion.SUROESTE){
-                throw new OperationNotSupportedException("La dama normal no puede avanzar hacia atrás");
+                throw new OperationNotSupportedException("La dama normal no puede avanzar hacia atras");
             }else if (npasos!=1){
                 throw new OperationNotSupportedException("La dama normal solo puede avanzar una casilla");
             }
@@ -138,7 +138,7 @@ public class Dama {
         this.posicion = posicion;
     }
 
-    public boolean isEsDamaEspecial() {
+    public boolean EsDamaEspecial() {
         return esDamaEspecial;
     }
 

@@ -55,7 +55,7 @@ public class MainApp {
   Consola.mostrarMenuDirecciones();
 
    int casillas;
-   if (dama.isEsDamaEspecial()) {
+   if (dama.EsDamaEspecial()) {
     System.out.println("es una dama especial indica el numero de casillas: ");
     casillas=Entrada.entero();
     dama.mover(Consola.elegirDirecion(),casillas);
