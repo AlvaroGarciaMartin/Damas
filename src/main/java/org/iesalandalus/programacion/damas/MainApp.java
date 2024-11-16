@@ -10,11 +10,18 @@ import java.awt.*;
 public class MainApp {
  private static Dama dama;
 
+
+//crear metodo main
  public static void main(String[] args) {
   int opcionElegida;
   do{
    Consola.mostrarMenu();
    opcionElegida=Consola.elegirOpcionMenu();
+      try {
+          ejecutarOpcion(opcionElegida);
+      } catch (OperationNotSupportedException e) {
+          throw new RuntimeException(e);
+      }
   }while(opcionElegida!=4);
 
 
