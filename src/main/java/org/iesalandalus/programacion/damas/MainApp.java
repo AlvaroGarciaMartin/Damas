@@ -4,6 +4,7 @@ import  org.iesalandalus.programacion.damas.modelo.Dama;
 import  org.iesalandalus.programacion.damas.modelo.Posicion;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
+import javax.naming.OperationNotSupportedException;
 import java.awt.*;
 
 public class MainApp {
@@ -18,7 +19,7 @@ public class MainApp {
 
 
  }
- private static void ejecutarOpcion( int opcion){
+ private static void ejecutarOpcion( int opcion) throws OperationNotSupportedException {
 
   switch (opcion){
    case 1:
@@ -42,4 +43,17 @@ public class MainApp {
  public static void crearDamaColor(){
  dama= new Dama(Consola.elegirOpcion());
  }
+ public static void mover() throws OperationNotSupportedException {
+  Consola.mostrarMenuDirecciones();
+
+   int casillas;
+   if (dama.isEsDamaEspecial()) {
+    System.out.println("es una dama especial indica el numero de casillas: ");
+    casillas=Entrada.entero();
+    dama.mover(Consola.elegirDirecion(),casillas);
+
+   }else dama.mover(Consola.elegirDirecion(),1);
+
+  }
+
 }
