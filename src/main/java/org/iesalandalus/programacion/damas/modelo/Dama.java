@@ -80,23 +80,7 @@ public class Dama {
             }
 
         }
-        else if (color == Color.NEGRO) {
-            if(direccion==Direccion.NORESTE||direccion==Direccion.NOROESTE){
-                throw new OperationNotSupportedException("La dama normal no puede avanzar hacia atrás");
-            }else if (npasos!=1){
-                throw new OperationNotSupportedException("La dama normal solo puede avanzar una casilla");
-            }
-            switch (direccion){
-                case SURESTE -> this.setPosicion( new Posicion(getPosicion().getFila()-1, (char)(getPosicion().getColumna() -1)));
-                case SUROESTE -> this.setPosicion( new Posicion(getPosicion().getFila()-1, (char)(getPosicion().getColumna() +1)));
-            }
-            //Si la dama negra llega al final del tablero se convierte en dama especial
-            if(this.posicion.getFila() ==1){
-                this.esDamaEspecial=true;
 
-            }
-
-        }
 
         }else {
             switch (direccion){
@@ -113,7 +97,7 @@ public class Dama {
 
     @Override
     public String toString() {
-        return "El color de la dama es: " +color+ " se situa en la posición con la fila: "+ posicion.getFila() + " y la columna: "+ posicion.getColumna();
+        return "El color de la dama es: " +color+ " se situa en la posicion con la fila: "+ posicion.getFila() + " y la columna: "+ posicion.getColumna();
     }
 
     public Color getColor() {
