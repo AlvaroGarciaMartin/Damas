@@ -74,5 +74,8 @@ public class Consola {
         }while(casillas<1 || casillas>8);
 
     }
+    public static void  despedirse(){
+        System.out.println("hasta pronto");
+    }
 
 }
