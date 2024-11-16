@@ -19,18 +19,27 @@ public class Consola {
        System.out.println(" 4. salir");
     }
 
-    public static void elegirOpcionMenu {
+    public static int elegirOpcionMenu() {
         int opcion;
         do {
             System.out.println("Indica El numero del menú que deseas usar");
             opcion= Entrada.entero();
         }while (opcion<1 || opcion>4);
 
-        System.out.println(opcion);
+        return opcion;
     }
 
-    public static void elegirOpcion {
+    public static Color elegirOpcion() {
+        int colorElegido;
+        do {
+            System.out.println("Escriba 1 para Blanco o 2 para Negro");
+            colorElegido=Entrada.entero();
+        }while (colorElegido<1 || colorElegido>2);
 
+        if (colorElegido == 1) {
+           return Color.BLANCO;
+
+        }else return Color.NEGRO;
     }
 
 }
